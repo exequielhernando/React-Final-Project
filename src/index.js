@@ -1,12 +1,17 @@
-import './index.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import { Provider } from "react-redux";
+import store from './redux/store/index'
+import './index.css';
+
 import getRoutes from './routes/';
 
 ReactDOM.render(
-    <BrowserRouter>
-        {getRoutes()}
-    </BrowserRouter>,
-    document.getElementById('root')
+	<Provider store={store}>
+		<BrowserRouter>
+			{getRoutes()}
+		</BrowserRouter>
+	</Provider>,
+	document.getElementById('root')
 );

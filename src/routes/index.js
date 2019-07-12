@@ -1,19 +1,21 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import MainView from './mainView/mainView';
-import HomeView from './homeView/homeView';
-import AboutView from './aboutView/aboutView';
-
-const getRoutes = function() {
-    return (
-        <div>
-            <Route name="Main" component={MainView} />
-            <Switch>
-                <Route exact path="/" component={HomeView} />
-                <Route path="/about" component={AboutView} />
-            </Switch>
-        </div>
-    )
+import Home from '../components/Home'
+import ArtistList from '../components/artistList'; 
+import Artist from '../components/artist'; 
+import Album from '../components/album'; 
+const getRoutes = () => {
+	return (
+			<div>
+				<Switch>
+					<Route Home="/" component={Home} />
+					<Route path="/ArtistList/:itemId" component={ArtistList} />
+					<Route path="/Artist/" component={Artist} />
+					<Route path="/Album" component={Album} />
+				</Switch>
+			</div>
+		
+	)
 };
 
 export default getRoutes;
