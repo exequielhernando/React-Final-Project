@@ -3,13 +3,10 @@ const defaultState = 0;
 
 function currentArtist(state = defaultState, action) {
     switch (action.type) {
-        case FIND_CURRENT_ARTIST:{
-           
-        }      
+        case FIND_CURRENT_ARTIST:
+           break;
         default:
-        {
            return state
-          }
     }   
 }
 export default currentArtist;
