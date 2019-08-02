@@ -1,12 +1,11 @@
-import React from 'react';
-import logo from '../../assets/logo.png';
+import React, { Component } from "react";
+import HeaderView from './HeaderView';
 
-function HeaderView(props) {
-    return(
-        <header className="main-view__header">
-            <img src={logo} className="main-view__logo" alt="logo" />
-        </header>
-            
-    );
+class Header extends Component{
+    render(){
+        return(
+            <HeaderView/>
+        );
+    }
 }
-export default HeaderView;
+export default Header;

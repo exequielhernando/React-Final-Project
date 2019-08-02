@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Component } from "react";
+import AlbumView from "./AlbumView";
 
-function AlbumView(props) {
-    return(
-        <div>
-            AlbumView
-        </div>
-    );
+class Album extends Component{
+    render(){
+        return(
+            <AlbumView>
+
+            </AlbumView>
+        );
+    }
 }
-export default AlbumView;
+export default Album;

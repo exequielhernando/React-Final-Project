@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../components/Home'
-import ArtistList from '../components/artistList'; 
-import Artist from '../components/artist'; 
-import Album from '../components/album'; 
+import ArtistList from '../components/artistList/ArtistList'; 
+import Artist from '../components/artist/Artist'; 
+import Album from '../components/album/Album'; 
 const getRoutes = () => {
 	return (
 			<div>

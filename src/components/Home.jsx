@@ -1,7 +1,8 @@
 import React, { Component} from 'react';
 import {connect} from 'react-redux'
-import Header from './header/index';
-import SearchInput from './searchInput/index';
+import Header from './header/Header';
+import ArtistList from './artistList/ArtistList'
+import SearchInput from './searchInput/SearchInput';
 import findSuggestion from '../redux/actions/findSuggestion';
 import findArtist from '../redux/actions/findArtist'
 import './mainView.css'
@@ -26,7 +27,7 @@ class Home extends Component{
     render(){
         const {text} = this.state;
         const {suggestion} = this.props;
-
+        
         return(
             <div>
                 <Header/>
@@ -37,6 +38,10 @@ class Home extends Component{
                             suggestion={suggestion}
                             onChangeText={this.onChangeText}
                             onChangeSelection={this.onChangeSelection}
+                        />
+                    </div>
+                    <div>
+                        <ArtistList                             
                         />
                     </div>
                 </article>

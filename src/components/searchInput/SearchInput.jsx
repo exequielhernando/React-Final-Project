@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './style.css'
+import './SearchInput.css'
 class SearchInput extends Component{
     constructor(props) {
         super(props);
@@ -19,6 +19,31 @@ class SearchInput extends Component{
         const {
             isOpen,
         } = this.state;
+
+
+        const suggestionElements = suggestion.map(suggestion =>
+            <div
+                key={suggestion.id}
+                component="div"
+                onClick={() => {
+                    onChangeSelection(suggestion.title);
+                    this.setState({ isOpen: false });
+                }}
+            >
+                {suggestion.title}
+            </div>);
+
+
+
+            // if (buscando) {
+            //     title =
+            //     text =
+            //     content =
+            // } else {
+                
+            // }
+
+
         return(
             <div className="main-container">
                 <input
@@ -53,17 +78,7 @@ class SearchInput extends Component{
                 />
                 {isOpen &&
                 <div className="container-results">
-                    {suggestion.map(suggestion =>
-                    <div
-                        key={suggestion.id}
-                        component="div"
-                        onClick={() => {
-                            onChangeSelection(suggestion.title);
-                            this.setState({ isOpen: false });
-                        }}
-                    >
-                        {suggestion.title}
-                    </div>)}
+                    {suggestionElements}
                 </div>}
             </div>
         );

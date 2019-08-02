@@ -1,5 +1,6 @@
-import {FIND_SUGGESTION} from '../constants/actions-types'
-import items from '../../data/items'
+import {FIND_SUGGESTION} from '../constants/actions-types';
+import items from '../../data/items';
+
 const defaultState = [];
 
 function suggestion(state = defaultState, action) {

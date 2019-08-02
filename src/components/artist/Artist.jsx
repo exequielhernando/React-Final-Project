@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Component } from "react";
+import ArtistView from "./ArtistView";
 
-function ArtistView(props) {
-    return(
-        <div>
-            Artist
-        </div>
-    );
+class Artist extends Component{
+    render(){
+        return(
+            <ArtistView>
+
+            </ArtistView>
+        );
+    }
 }
-export default ArtistView;
+export default Artist;

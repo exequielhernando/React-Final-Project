@@ -1,45 +1,41 @@
-import React from 'react';
+import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import ArtistListView from "./ArtistListView";
 
+class ArtistList extends Component{
+    constructor(props) {
+        super(props);
 
-function ArtistListView(props) {
-    const {
-        artist,
-        goTo,
-    } = props;
-    const isEmpy = artist.lenght === 0;
-    return(
-        <div>
-            {isEmpy ? 
-                <p>No result</p>
-                :
-                artist.map (item => 
-                    <div
-                            key={item.id}
-                            className="card-container"
-                        >
-                            <div
-                                className="card"
-                                onClick={() => goTo(`/ArtistList/${item.id}`)}
-                            >
-                                <div>
-                                    <div
-                                        className="card-media"
-                                        image={item.image}
-                                        title={item.title}
-                                    />
-                                    <div>
-                                        <div gutterBottom variant="h5" component="h2">
-                                            {item.title}
-                                        </div>
-                                        <div component="p">
-                                            {item.content}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>)
-            }
-        </div>            
-    );
+        this.state = {
+        };
+
+        this.goTo = this.goTo.bind(this);
+    }
+
+    goTo(path) {
+        this.props.history.push(path);
+    }
+
+    render() {
+        const {
+            artist,
+        } = this.props;
+
+        return (
+            <ArtistListView
+                artist={artist}
+                goTo={this.goTo}
+            />
+        );
+    }
 }
-export default ArtistListView;
+            
+const mapStateToProps = state => {
+    return{
+        artist: state.artist,
+    }
+}
+export default withRouter(
+    connect(mapStateToProps)(ArtistList)
+);
